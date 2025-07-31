@@ -27,30 +27,45 @@
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
     .hamburger span{width:25px;height:3px;background:#fff;border-radius:3px;transition:transform .3s}
     .hero{padding-top:130px;background:linear-gradient(180deg,var(--primary)0%,var(--primary-light)100%);color:#fff;text-align:center;position:relative;overflow:hidden}
-    /* IMAGEN DE FONDO MEJORADA */
     .hero::before{content:"";position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;opacity:.1}
     .hero__inner{position:relative;max-width:1100px;margin:auto;padding:3rem 1rem;z-index:1}
     .hero h1{font-size:2.9rem;font-weight:700;line-height:1.15;margin-bottom:1rem;text-shadow:0 4px 12px rgba(0,0,0,.25)}
     .hero p{font-size:1.15rem;margin-bottom:2.1rem;max-width:660px;margin-inline:auto;opacity:.95}
-    .hero__mockup{margin-top:3rem;max-width:520px;border-radius:1.5rem;box-shadow:var(--shadow-lg);animation:float 6s ease-in-out infinite}
+    /* Estilos para los logos de las tiendas de apps */
+    .hero__stores{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem}
+    .hero__stores a{transition:transform .2s}
+    .hero__stores a:hover{transform:scale(1.05)}
+    .hero__stores img{height:45px;width:auto}
+    .hero__mockup{margin:4rem auto 0;max-width:380px;border-radius:1.5rem;box-shadow:var(--shadow-lg);animation:float 6s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     .features{padding:4.5rem 1rem;background:var(--gray-100)}
-    .section-title{text-align:center;font-size:2.15rem;font-weight:600;margin-bottom:3rem;color:var(--gray-900)}
+    .section-title{text-align:center;font-size:2.15rem;font-weight:600;margin-bottom:1rem;color:var(--gray-900)}
+    .section-subtitle{text-align:center;font-size:1.1rem;color:var(--gray-700);max-width:600px;margin:0 auto 3.5rem}
     .features__grid{max-width:1100px;margin:auto;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{border-radius:1.2rem;padding:2rem;box-shadow:var(--shadow-md);transition:transform .25s,box-shadow .25s}
+    .card{border-radius:1.2rem;padding:2rem;box-shadow:var(--shadow-md);transition:transform .25s,box-shadow .25s;background-color:#fff;}
     .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.18)}
-    /* CSS PARA ALINEAR ICONOS SVG */
     .card h3{font-size:1.35rem;margin-bottom:.8rem;color:var(--primary);display:flex;align-items:center;gap:.7rem}
     .card h3 svg{width:28px;height:28px;flex-shrink:0}
     .card p{font-size:.97rem;color:var(--gray-700)}
+
+    /* --- Nueva sección de Flujo de Trabajo --- */
+    .workflow {padding: 4.5rem 1rem;}
+    .workflow__grid {max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; align-items: center;}
+    .workflow__step {text-align: center; padding: 1.5rem; position: relative;}
+    .workflow__step-icon {margin: 0 auto 1.5rem; width: 64px; height: 64px; background-color: rgba(5, 108, 242, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);}
+    .workflow__step-icon svg {width: 32px; height: 32px;}
+    .workflow__step h3 {font-size: 1.25rem; color: var(--gray-900); margin-bottom: 0.5rem;}
+    .workflow__step p {font-size: 0.95rem; color: var(--gray-700); max-width: 300px; margin: 0 auto;}
+    /* Flecha conectora */
+    .workflow__step:not(:last-child)::after {content: '→'; font-size: 2rem; color: var(--primary-light); position: absolute; right: -25px; top: 32px; transform: translateX(50%);}
+    @media(max-width: 860px) { .workflow__step:not(:last-child)::after {display: none;} }
+    
     .steps{padding:4.5rem 1rem;background:linear-gradient(135deg,var(--gray-50)0%,#e0f4ff 100%)}
     .steps__wrapper{max-width:1100px;margin:auto;display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center}
     .steps__img{border-radius:1.2rem;box-shadow:var(--shadow-lg)}
     .steps__list{list-style:none;display:flex;flex-direction:column;gap:1.4rem}
-    /* CSS PARA ALINEAR ICONOS SVG */
     .steps__list li{font-size:1.05rem;display:flex;align-items:center;gap:.8rem;background:rgba(255,255,255,.55);padding:.8rem 1.2rem;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.06);backdrop-filter:blur(6px)}
     .steps__list li svg{width:24px;height:24px;color:var(--secondary);flex-shrink:0}
-    /* Se elimina el pseudo-elemento ::before ya que ahora usamos SVG */
     .cta{padding:4.5rem 1rem;background:linear-gradient(90deg,var(--secondary)0%,var(--primary-light)100%);text-align:center;color:#fff;position:relative;overflow:hidden}
     .cta::after{content:"";position:absolute;bottom:-60px;right:-60px;width:240px;height:240px;background:rgba(255,255,255,.15);border-radius:50%;filter:blur(35px)}
     .cta h2{font-size:2.1rem;font-weight:600;margin-bottom:1rem;text-shadow:0 4px 12px rgba(0,0,0,.25)}
@@ -71,7 +86,7 @@
       <a href="#" class="nav__logo">DoctorsKeys</a>
       <div class="nav__links" id="navLinks">
         <a href="#features">Beneficios</a>
-        <a href="#steps">Cómo funciona</a>
+        <a href="#workflow">Cómo funciona</a>
         <a href="#cta">Planes</a>
         <a href="#" class="nav__cta">Empezar</a>
       </div>
@@ -85,43 +100,79 @@
       <p>Guarda, gestiona y comparte tus exámenes y radiografías de manera segura con DoctorsKeys, la plataforma que conecta pacientes y médicos.</p>
       <button class="btn btn--light" onclick="scrollToSection('cta')">¡Pruébalo gratis!</button>
       <button class="btn btn--dark" onclick="scrollToSection('features')">Ver beneficios</button>
-    
+      
+      <div class="hero__stores">
+        <a href="#" aria-label="Descargar en la App Store"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+        <a href="#" aria-label="Descargar en Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+      </div>
+
+      
     </div>
   </section>
 
   <section class="features" id="features">
-    <h2 class="section-title">Beneficios clave</h2>
+    <h2 class="section-title">Una plataforma, múltiples beneficios</h2>
+    <p class="section-subtitle">Diseñada para darte control total sobre tu información médica y facilitar la comunicación con los profesionales de la salud.</p>
     <div class="features__grid">
-      <div class="card glass">
+      <div class="card">
         <h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
           <span>Privacidad total</span>
         </h3>
-        <p>Tus datos están cifrados y solo tú decides quién puede acceder.</p>
+        <p>Tus datos están cifrados de extremo a extremo y solo tú decides quién puede acceder a ellos.</p>
       </div>
-       <div class="card glass">
+       <div class="card">
         <h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" /></svg>
           <span>Organización sencilla</span>
         </h3>
-        <p>Categoriza tus estudios por tipo, fecha o médico para encontrarlos al instante.</p>
+        <p>Categoriza tus estudios por tipo, fecha o médico para encontrarlos al instante, sin papeles.</p>
       </div>
-       <div class="card glass">
+       <div class="card">
         <h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span>Trabajo médico eficiente</span>
+          <span>Acceso inmediato</span>
         </h3>
-        <p>Los profesionales visualizan resultados al momento y agregan observaciones en línea.</p>
+        <p>Los profesionales visualizan tus resultados al momento con un código QR, agilizando tus consultas.</p>
       </div>
-       <div class="card glass">
+       <div class="card">
         <h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
           <span>Suscripción flexible</span>
         </h3>
-        <p>Planes mensuales y anuales que se adaptan a tus necesidades.</p>
+        <p>Planes mensuales y anuales que se adaptan a tus necesidades, con 14 días de prueba gratis.</p>
       </div>
     </div>
   </section>
+
+  <section id="workflow" class="workflow">
+    <h2 class="section-title">¿Cómo Funciona?</h2>
+    <p class="section-subtitle">Compartir tu historial médico nunca fue tan fácil y seguro. Sigue estos tres pasos:</p>
+    <div class="workflow__grid">
+      <div class="workflow__step">
+        <div class="workflow__step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l-3.75 3.75M12 9.75l3.75 3.75M3 17.25V6.75A2.25 2.25 0 015.25 4.5h13.5A2.25 2.25 0 0121 6.75v10.5A2.25 2.25 0 0118.75 19.5H5.25A2.25 2.25 0 013 17.25z" /></svg>
+        </div>
+        <h3>1. Sube tus archivos</h3>
+        <p>Guarda tus radiografías, exámenes y resultados en un solo lugar seguro desde tu teléfono o la web.</p>
+      </div>
+      <div class="workflow__step">
+        <div class="workflow__step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 15.75h19.5" /></svg>
+        </div>
+        <h3>2. Genera un QR seguro</h3>
+        <p>Crea un código QR temporal y de un solo uso para compartir tu historial al instante durante tu consulta.</p>
+      </div>
+      <div class="workflow__step">
+        <div class="workflow__step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+        </div>
+        <h3>3. Tu médico accede</h3>
+        <p>El profesional escanea el código con su dispositivo y visualiza tus archivos de forma segura y al momento.</p>
+      </div>
+    </div>
+  </section>
+
 
   <section class="steps" id="steps">
     <div class="steps__wrapper">
