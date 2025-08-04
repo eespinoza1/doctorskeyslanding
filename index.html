@@ -38,17 +38,26 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     .section-title{text-align:center;font-size:2.15rem;font-weight:600;margin-bottom:1rem;color:var(--gray-900)}
     .section-subtitle{text-align:center;font-size:1.1rem;color:var(--gray-700);max-width:700px;margin:0 auto 3.5rem}
-    .features{padding:4.5rem 1rem;background:var(--gray-100)}
-    .features__grid{max-width:1100px;margin:auto;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .card{border-radius:1.2rem;padding:2rem;box-shadow:var(--shadow-md);transition:transform .25s,box-shadow .25s;background-color:#fff; display: flex; flex-direction: column;}
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.18)}
-    .card__header{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;}
-    .card__icon{color:var(--primary); width:32px; height:32px; flex-shrink:0;}
-    .card h3{font-size:1.35rem;color:var(--primary);}
-    .card p{font-size:.97rem;color:var(--gray-700); flex-grow: 1;}
-    .badge {background-color: var(--secondary); color: white; font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 20px; display: inline-block;}
     
-    /* --- Nueva sección de Formatos de Carga --- */
+    /* --- SECCIÓN DE BENEFICIOS MEJORADA --- */
+    .features{padding:4.5rem 1rem;background:var(--gray-100)}
+    .benefits-container {display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem auto;}
+    @media (min-width: 768px) { .benefits-container {grid-template-columns: 1fr 1fr;} }
+    .benefit-column {background: #fff; border-radius: 1.2rem; padding: 2rem; box-shadow: var(--shadow-md);}
+    .benefit-header {display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--gray-100); padding-bottom: 1rem;}
+    .benefit-header svg {width: 40px; height: 40px; color: var(--primary);}
+    .benefit-header h3 {font-size: 1.5rem; color: var(--gray-900); margin: 0;}
+    .benefit-list {list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.2rem;}
+    .benefit-list li {display: flex; align-items: flex-start; gap: 1rem;}
+    .benefit-list .li-icon {width: 24px; height: 24px; color: var(--secondary); flex-shrink: 0; margin-top: 3px;}
+    .benefit-list p {margin: 0; font-size: 0.95rem; color: var(--gray-700);}
+    .mutual-benefit-card {background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-radius: 1.2rem; padding: 2rem; max-width: 900px; margin: 2rem auto 0 auto; box-shadow: var(--shadow-lg);}
+    .mutual-benefit-card .benefit-header svg {color: #fff;}
+    .mutual-benefit-card .benefit-header h3 {color: #fff;}
+    .mutual-benefit-card .benefit-header {border-bottom-color: rgba(255,255,255,0.2);}
+    .mutual-benefit-card .benefit-list p {color: rgba(255,255,255,0.9);}
+    .mutual-benefit-card .benefit-list .li-icon {color: #fff;}
+
     .upload-section {padding: 4.5rem 1rem;}
     .upload-section__grid {max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;}
     .upload-card {text-align: center; padding: 2rem 1.5rem; border-radius: 1.2rem; background: #fff; box-shadow: var(--shadow-md); transition: transform .25s;}
@@ -66,15 +75,6 @@
     .workflow__step h3 {font-size: 1.25rem; color: var(--gray-900); margin-bottom: 0.5rem;}
     .workflow__step p {font-size: 0.95rem; color: var(--gray-700); max-width: 300px; margin: 0 auto;}
     
-    .organization {padding: 4.5rem 1rem; background-color: var(--gray-100);}
-    .organization__wrapper {max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;}
-    @media (min-width: 768px) { .organization__wrapper {grid-template-columns: 1fr 1fr;} }
-    .organization__content ul {list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;}
-    .organization__content li {display: flex; align-items: flex-start; gap: 1rem;}
-    .organization__content .li-icon {color: var(--secondary); width: 24px; height: 24px; flex-shrink: 0; margin-top: 4px;}
-    .organization__content h4 {font-size: 1.1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.25rem;}
-    .organization__img {border-radius: 1.2rem; box-shadow: var(--shadow-lg);}
-
     .cta{padding:4.5rem 1rem;background:linear-gradient(90deg,var(--secondary)0%,var(--primary-light)100%);text-align:center;color:#fff;position:relative;overflow:hidden}
     .cta::after{content:"";position:absolute;bottom:-60px;right:-60px;width:240px;height:240px;background:rgba(255,255,255,.15);border-radius:50%;filter:blur(35px)}
     .cta h2{font-size:2.1rem;font-weight:600;margin-bottom:1rem;text-shadow:0 4px 12px rgba(0,0,0,.25)}
@@ -114,32 +114,87 @@
         <a href="#" aria-label="Descargar en Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
       </div>
 
+
     </div>
   </section>
 
+  <!-- SECCIÓN DE BENEFICIOS ACTUALIZADA -->
   <section class="features" id="features">
-    <h2 class="section-title">Una plataforma para cada rol</h2>
-    <p class="section-subtitle">Diseñada para las necesidades específicas de cada usuario en el ecosistema de la salud.</p>
-    <div class="features__grid">
-      <div class="card">
-        <div class="card__header">
-            <span class="badge">Para Pacientes</span>
+    <h2 class="section-title">Una Plataforma, Múltiples Beneficios</h2>
+    <p class="section-subtitle">Descubre cómo DoctorsKeys empodera a pacientes y optimiza el trabajo de los profesionales de la salud.</p>
+    
+    <div class="benefits-container">
+      <!-- Columna para Pacientes -->
+      <div class="benefit-column">
+        <div class="benefit-header">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+          <h3>Para Pacientes</h3>
         </div>
-        <h3>Control total de tu salud</h3>
-        <p>Sube tus archivos, recibe los que tus médicos cargan en tu perfil y autoriza accesos con un código OTP. Tu salud, tus reglas.</p>
+        <ul class="benefit-list">
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg></div>
+            <p><strong>Control total sobre tu información:</strong> Sube, organiza y comparte tus registros médicos según tu criterio, promoviendo tu empoderamiento.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" /></svg></div>
+            <p><strong>Acceso inmediato desde cualquier lugar:</strong> Ideal para emergencias, viajes o segundas opiniones médicas.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 15h3.75a3.375 3.375 0 003.375-3.375V13.5a1.125 1.125 0 01-1.125-1.125h-1.5a3.375 3.375 0 00-3.375 3.375V19.5z" /></svg></div>
+            <p><strong>Evita la pérdida de documentos importantes:</strong> Tus estudios, análisis y diagnósticos no se pierden con el tiempo o en mudanzas.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg></div>
+            <p><strong>Mayor transparencia y comprensión:</strong> Ver tus propios registros te permite entender mejor tu condición y tratamiento.</p>
+          </li>
+        </ul>
       </div>
-       <div class="card">
-        <div class="card__header">
-            <span class="badge">Para Médicos</span>
+      <!-- Columna para Médicos -->
+      <div class="benefit-column">
+        <div class="benefit-header">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          <h3>Para Médicos</h3>
         </div>
-        <h3>Acceso y carga eficientes</h3>
-        <p>Carga resultados, informes y placas directamente al historial del paciente. Accede a la información que te comparten de forma segura e instantánea.</p>
+        <ul class="benefit-list">
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg></div>
+            <p><strong>Acceso rápido y centralizado:</strong> Consulta antecedentes, laboratorios e imágenes sin depender de archivos físicos o sistemas desconectados.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18h16.5V3H3.75zM9 13.5h6.75M9 16.5h6.75" /></svg></div>
+            <p><strong>Mejor toma de decisiones clínicas:</strong> Un historial completo y categorizado permite diagnósticos más acertados y tratamientos personalizados.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962A3 3 0 013 18.72v-2.172a3 3 0 013.03-2.962m3.844 6.132a3 3 0 01-3.844 0m3.844 0a3 3 0 013.844 0m-11.313 0a3.002 3.002 0 01-2.83-2.055A3 3 0 016.15 13.48m7.5 0a3 3 0 016.15 2.172m-6.15 0a3 3 0 01-6.15 0m5.172 0a3 3 0 01-5.172 0m5.172 0a3 3 0 01-5.172 0" /></svg></div>
+            <p><strong>Colaboración más eficiente:</strong> Médicos de distintas especialidades pueden acceder a los mismos registros (con permiso) mejorando el trabajo en equipo.</p>
+          </li>
+          <li>
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" /></svg></div>
+            <p><strong>Seguimiento más preciso del paciente:</strong> Revisa notas anteriores, evolución de condiciones crónicas y cambios en resultados fácilmente.</p>
+          </li>
+        </ul>
       </div>
-       
+    </div>
+
+    <!-- Tarjeta de Beneficio Mutuo -->
+    <div class="mutual-benefit-card">
+      <div class="benefit-header">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125A2.25 2.25 0 014.5 4.875h15a2.25 2.25 0 012.25 2.25v9.75a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25v-9.75z" /></svg>
+        <h3>Beneficio Mutuo</h3>
+      </div>
+      <ul class="benefit-list">
+        <li>
+          <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.482L7 21h4.125c.621 0 1.125-.504 1.125-1.125V20.25z" /></svg></div>
+          <p><strong>Comunicación más fluida:</strong> Al compartir documentos y notas digitalmente, se facilita el diálogo y la toma de decisiones compartidas entre paciente y médico.</p>
+        </li>
+        <li>
+          <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.696a4.25 4.25 0 01-6.01 0M16.023 9.348a4.25 4.25 0 010 6.01M19.644 2.985a4.25 4.25 0 010 6.01M4.93 16.023a4.25 4.25 0 010-6.01M16.023 9.348L19.644 2.985m0 0l-2.696 4.992m-2.696-4.992l2.696 4.992" /></svg></div>
+          <p><strong>Prevención y medicina personalizada:</strong> Un historial completo y organizado permite detectar patrones o riesgos que de otra forma pasarían desapercibidos.</p>
+        </li>
+      </ul>
     </div>
   </section>
   
-  <!-- NUEVA SECCIÓN DE FORMATOS -->
   <section id="formats" class="upload-section">
     <h2 class="section-title">Un Repositorio Médico Completo</h2>
     <p class="section-subtitle">Tanto pacientes como médicos pueden cargar archivos en múltiples formatos. Centraliza todo tu historial, sin importar el origen o tipo de archivo.</p>
@@ -206,43 +261,10 @@
     </div>
   </section>
 
-  <section id="organization" class="organization">
-      <div class="organization__wrapper">
-          <div class="organization__content">
-            <h2 class="section-title" style="text-align: left;">Organización Inteligente</h2>
-            <p class="section-subtitle" style="text-align: left; margin-left: 0;">Olvídate del desorden. Nuestra IA clasifica tus documentos para que encuentres lo que necesitas, cuando lo necesitas.</p>
-            <ul>
-                <li>
-                    <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg></div>
-                    <div>
-                        <h4>Clasificación por Patología</h4>
-                        <p>Sube tus archivos y nuestro sistema los analizará para agruparlos por condición médica (ej. Cardiología, Traumatología).</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18" /></svg></div>
-                    <div>
-                        <h4>Línea de Tiempo Automática</h4>
-                        <p>Visualiza tu historial médico completo en una línea de tiempo cronológica para un seguimiento claro de tu evolución.</p>
-                    </div>
-                </li>
-                 <li>
-                    <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg></div>
-                    <div>
-                        <h4>Búsqueda Rápida y Filtros</h4>
-                        <p>Encuentra cualquier documento en segundos usando filtros por fecha, tipo de estudio o patología.</p>
-                    </div>
-                </li>
-            </ul>
-          </div>
-          <img class="organization__img" src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=900" alt="Historial médico organizado en una pantalla" />
-      </div>
-  </section>
-
   <section class="cta" id="cta">
     <h2>Toma el control de tu salud hoy</h2>
-    <p>Desde $Pendiente por aclarar. Cancela cuando quieras.</p>
-    <button class="btn btn--light" onclick="alert('Prueba iniciada')">Iniciar prueba gratuita</button>
+    <p>Desde $N USD al mes con 14 días de prueba gratis. Cancela cuando quieras.</p>
+    <button class="btn btn--light" onclick="alert('Prueba iniciada')">Iniciar prueba gratuita(definicion en proceso)</button>
   </section>
 
   <footer>
